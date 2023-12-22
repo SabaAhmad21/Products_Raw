@@ -1,22 +1,62 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RawMaterial.Infrastructure.Interface;
+using RawMaterial.ViewModels;
 
 namespace RawMaterial.Controllers
 {
+
     public class MaterialController : Controller
     {
-        public IActionResult Index()
+        private IMaterialRepository _materialRepository;
+
+        public MaterialController(IMaterialRepository materialRepository)
         {
-            return View();
+            _materialRepository = materialRepository;
         }
 
+        [HttpGet]
         public IActionResult Materials()
         {
-            return View();
+            return View(_materialRepository.GetAllMaterial());
         }
 
-        public IActionResult MaterialCreateVM()
+
+        [HttpGet]
+        public IActionResult CreateMaterial()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult CreateMaterial(CreateMaterialVM guiMaterial)
+        {
+            if(ModelState.IsValid)
+            {
+                if(_materialRepository.CreateMaterial(guiMaterial))
+                {
+                    ModelState.AddModelError("", "Material Created Successfully");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Something went wrong");
+                }
+                return View();
+            }
+            return View();
+        }
+       
+
+
+
+        public IActionResult MaterialUpdate()
+        {
+            return View();
+           
+        }
+        public IActionResult DeleteMaterial(int id)
+        {
+            _materialRepository.DeleteMaterial(id);
+            
+            return RedirectToAction("Materials", new {Controller = "Material"});
         }
         
     }

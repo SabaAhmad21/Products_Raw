@@ -1,6 +1,6 @@
 ﻿namespace RawMaterial.ViewModels
 {
-    public class Material
+    public class MaterialVM
     {
         public int Id {  get; set; }
 
@@ -15,7 +15,7 @@
 
     }
 
-    public class MaterialCreateVM
+    public class CreateMaterialVM
     {
         
 

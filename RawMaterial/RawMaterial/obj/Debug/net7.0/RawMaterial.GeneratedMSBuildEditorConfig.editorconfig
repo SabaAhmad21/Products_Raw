@@ -24,12 +24,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/My DotNet Projects/Practice-Pro/Products_Raw/RawMaterial/RawMaterial/Views/Material/MaterialCreate.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWxcTWF0ZXJpYWxDcmVhdGUuY3NodG1s
+[D:/My DotNet Projects/Practice-Pro/Products_Raw/RawMaterial/RawMaterial/Views/Material/CreateMaterial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWxcQ3JlYXRlTWF0ZXJpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/My DotNet Projects/Practice-Pro/Products_Raw/RawMaterial/RawMaterial/Views/Material/Materials.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWxcTWF0ZXJpYWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/My DotNet Projects/Practice-Pro/Products_Raw/RawMaterial/RawMaterial/Views/Material/MaterialUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWxcTWF0ZXJpYWxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/My DotNet Projects/Practice-Pro/Products_Raw/RawMaterial/RawMaterial/Views/Shared/Error.cshtml]

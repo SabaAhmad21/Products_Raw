@@ -1,4 +1,43 @@
-﻿
+﻿@using RawMaterial.ViewModels;
 
+@{
+    ViewData["Title"] = "Materials";
+}
 
-<a asp-action="MaterialCreate" asp-controller="Material" class="btn btn-primary btn-sm mt-5">Add Material</a>
+<a asp-action="CreateMaterial" asp-controller="Material" class="btn btn-primary btn-sm mt-5">Add Material</a>
+<table class="table table-hover mt-5">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Unit</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Model != null )
+        {
+            int index = 1;
+            foreach(MaterialVM item in Model)
+            {
+                <tr>
+                    <th scope="row">@index</th>
+                    <td>@item.ProductName</td>
+                    <td>@item.Unit</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Date</td>
+                    <td>
+                        <a class="btn btn-danger btn-xs" asp-area="" asp-controller="Material" asp-action="DeleteMaterial" asp-route-id="@item.Id">Delete</a>
+
+                        <a class="btn btn-warning btn-xs" asp-area="" asp-controller="Material" asp-action="UpdateMaterial" asp-route-id="@item.Id">Edit</a>
+
+                    </td>
+                </tr>
+                index++;
+           }
+
+        }
+    </tbody>
+
+</table>

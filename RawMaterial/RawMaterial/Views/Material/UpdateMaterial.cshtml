@@ -1,16 +1,16 @@
-﻿@model RawMaterial.ViewModels.MaterialVM
+﻿@model RawMaterial.ViewModels.UpdateMaterialVM
 
 @{
-    ViewData["Title"] = "MaterialUpdate";
+    ViewData["Title"] = "UpdateMaterial";
 }
 
-<h1>MaterialUpdate</h1>
+<h1>UpdateMaterial</h1>
 
-<h4>MaterialVM</h4>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="MaterialUpdate">
+        <form asp-action="UpdateMaterial" asp-controller="Material" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Id" class="control-label"></label>

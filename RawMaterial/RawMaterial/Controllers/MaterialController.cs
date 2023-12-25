@@ -43,21 +43,34 @@ namespace RawMaterial.Controllers
             }
             return View();
         }
-       
 
-
-
-        public IActionResult MaterialUpdate()
+        public IActionResult UpdateMaterial(int id)
         {
-            return View();
-           
+
+
+            return View(_materialRepository.GetMaterialById(id));
+
+        }
+
+    
+
+
+        [HttpPost]
+        public IActionResult UpdateMaterial(UpdateMaterialVM model)
+        {
+
+            //return View(model);
+            _materialRepository.UpdateMaterial(model);
+
+            return RedirectToAction("Materials", new { Controller = "Material" });
+
         }
         public IActionResult DeleteMaterial(int id)
         {
             _materialRepository.DeleteMaterial(id);
-            
-            return RedirectToAction("Materials", new {Controller = "Material"});
+
+            return RedirectToAction("Materials", new { Controller = "Material" });
         }
-        
+
     }
 }

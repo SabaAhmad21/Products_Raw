@@ -52,9 +52,10 @@ namespace RawMaterial.Infrastructure.Implementation
             return ListMaterial;
         }
 
-        public bool UpdateMaterial(MaterialVM model)
+    
+        public bool UpdateMaterial(UpdateMaterialVM model)
         {
-           var material =_context.Materials.Where(p => p.Id == model.Id).FirstOrDefault();
+            var material = _context.Materials.Where(p => p.Id == model.Id).FirstOrDefault();
             if (material != null)
             {
                 material.Unit = model.Unit;
@@ -68,9 +69,31 @@ namespace RawMaterial.Infrastructure.Implementation
             return true;
 
         }
-    }
+
+       
+        public UpdateMaterialVM GetMaterialById(int id)
+        {
+            var material = _context.Materials.Where(p => p.Id == id).FirstOrDefault();
+            if (material != null)
+            {
+                return new UpdateMaterialVM()
+                {
+                    Id = material.Id,
+                    Date = (DateTime)material.Date,
+                    Unit = material.Unit,
+                    Quantity = material.Quantity
+                };
+            }
+            else
+            {
+                return null;
+            }
+        }
 
 
+
     }
+    }
+
 
       
